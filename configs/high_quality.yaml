@@ -1,0 +1,38 @@
+# configs/high_quality.yaml
+generation:
+  model_architecture: "NeRF + Diffusion"
+  default_resolution: 512
+  num_views: 12
+  guidance_scale: 9.0
+  consistency_weight: 0.8
+  enable_multiview_consistency: true
+
+rendering:
+  output_format: "NeRF"
+  enable_lighting: true
+  enable_materials: true
+  render_quality: "ultra"
+  ray_marching_steps: 256
+  antialiasing: true
+
+export:
+  preferred_format: "glb"
+  include_textures: true
+  include_materials: true
+  generate_lods: true
+  lod_levels: [10000, 5000, 2000, 500]
+  texture_resolution: 2048
+
+performance:
+  use_gpu: true
+  batch_size: 1
+  cache_models: true
+  optimize_memory: false
+  precision: "fp32"
+
+visualization:
+  interactive_quality: "high"
+  enable_animations: true
+  default_camera: "perspective"
+  shadow_quality: "high"
+  reflection_quality: "high"
